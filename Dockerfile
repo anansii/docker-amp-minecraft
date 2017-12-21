@@ -1,7 +1,7 @@
 #
 # AMP Dockerfile
 #
-# https://github.com/othrayte/docker-cc-amp
+# https://github.com/anansii/docker-cc-amp
 #
 
 # Pull base image.
@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y \
   unzip \
   git \
   wget \
-  openjdk-7-jre \
+  libsqlite3-dev \
+  openjdk-9-jre \
 && rm -rf /var/lib/apt/lists/*
 
 RUN \
@@ -49,5 +50,7 @@ ENTRYPOINT ["./start.sh"]
 
 RUN ln -s /ampdata /home/AMP/.ampdata
 
+ENV MODULE=Minecraft EXTRAS="+MinecraftModule.Minecraft.PortNumber 25565"
+
 # Expose ports.
-EXPOSE 8080
+EXPOSE 8080 25565

@@ -5,28 +5,61 @@ Installs the Application Management Panel from CubeCoders.
 
 This container requires a valid AMP license to run
 
+## Changes from since fork
+- added sqlite3
+- switched from Java 7 to Java 9
+
+
 ## Running minecraft (with an AMP licence)
 
 ### Using environment vars
 
-Create an enviroment variable file (called something like "amp-env.list") with ther following contents
+The defaults are 
+
+```
+MODULE=Minecraft
+EXTRAS="+MinecraftModule.Minecraft.PortNumber 25565"
+```
+
+Create an enviroment variable file (called something like "amp-env.list") with the following contents
 
 ```
 LICENCE=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-EXTRAS=+MinecraftModule.Minecraft.PortNumber 25565
 ```
 
 Running the container is then as simple as:
 
-`docker run -p 8080:8080 -p 25565:25565 --env-file ./amp-env.list othrayte/amp Minecraft`
+`docker run -p 8080:8080 -p 25565:25565 --env-file ./amp-env.list anansii/amp-minecraft`
+
+
+Or add some options:
+```
+LICENCE=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+EXTRAS=+MinecraftModule.Minecraft.PortNumber 30000
+PORT=9000 
+```
+In this case EXTRAS overwrites the default port to 30000 for Minecraft and PORT to 9000 for AMP 
+
+
+Running the container is then as simple as:
+
+`docker run -p 9000:9000 -p 25565:25565 --env-file ./amp-env.list anansii/amp-minecraft`
 
 ### Directly passing options
 
 Another method is to pass the required options directly to the container.
 
-`docker run -p 8080:8080 -p 25565:25565 othrayte/amp Minecraft --licence-key your-licence-key-xxxx +MinecraftModule.Minecraft.PortNumber 25565`
+With defaults
 
-Both of these methods create a docker container with the Minecraft module for AMP. You can login to the administrative console at port 8080 with the username "admin" and password "password"; change the password when you first login. From here it is a standard AMP Minecraft module.
+`docker run -p 8080:8080 -p 25565:25565 anansii/amp-minecraft --licence-key your-licence-key-xxxx`
+
+With port change:
+
+`docker run -p 8080:8080 -p 25565:25565 anansii/amp-minecraft --licence-key your-licence-key-xxxx +MinecraftModule.Minecraft.PortNumber 30000`
+
+
+Both of these methods create a docker container with the Minecraft module for AMP. You can login to the administrative console at port (default) 8080 with the username "admin" and password "password"; change the password when you first login. From here it is a standard AMP Minecraft module.
+
 
 ## Options
 

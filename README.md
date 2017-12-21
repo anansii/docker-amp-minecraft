@@ -1,6 +1,6 @@
 Forked from https://github.com/othrayte/docker-cc-amp
 - added sqlite3
-- switched from Java 7 to Java 9
+- switched from Java 7 to Java 8
 
 # AMP Dockerfile
 Installs the Application Management Panel from CubeCoders and starts the Minecraft module.

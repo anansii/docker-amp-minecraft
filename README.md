@@ -1,3 +1,5 @@
+Forked from https://github.com/othrayte/docker-cc-amp
+
 # AMP Dockerfile
 Dockerfile for a container that installs and starts a Application Management Panel module from CubeCoders.com
 
@@ -5,7 +7,7 @@ Installs the Application Management Panel from CubeCoders.
  
 This container requires a valid AMP license to run
 
-## Changes from since fork
+## Changes since fork
 - added sqlite3
 - switched from Java 7 to Java 9
 

@@ -1,11 +1,4 @@
-#
-# AMP Dockerfile
-#
-# https://github.com/anansii/docker-cc-amp
-#
-
-# Pull base image.
-FROM debian
+FROM openjdk:9
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -18,7 +11,6 @@ RUN apt-get update && apt-get install -y \
   git \
   wget \
   libsqlite3-dev \
-  openjdk-9-jre \
 && rm -rf /var/lib/apt/lists/*
 
 RUN \

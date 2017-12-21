@@ -2,7 +2,7 @@
 Dockerfile for a container that installs and starts a Application Management Panel module from CubeCoders.com
 
 Installs the Application Management Panel from CubeCoders.
-
+ 
 This container requires a valid AMP license to run
 
 ## Changes from since fork
@@ -76,4 +76,4 @@ Most arguments to the container, and to the AMP modules inside it, can be passed
 | `--port` | `PORT` | "8080" | The network port to listen on |
 | `+OOOOO` | `EXTRAS` | No default | Extra options that are passed to the AMP module |
 
-Note: Extra options should each be in the format `+MyOption Value`, when specified in the enviroment variable multiple options can be added separated by spaces.
+Note: Extra options should each be in the format `+MyOption Value`, when specified in the enviroment variable multiple options can be added separated by spaces

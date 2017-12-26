@@ -23,10 +23,10 @@ RUN apt-get update && apt-get install -y \
   /var/lib/apt/lists/*
 
 RUN \
-  groupadd --gid "${USER_GID}" "${USER}" && \
+  groupadd --gid "${GID}" "${USER}" && \
   useradd \
-      --uid ${USER_ID} \
-      --gid ${USER_GID} \
+      --uid ${UID} \
+      --gid ${GID} \
       --create-home \
       --shell /bin/bash \
       ${USER} && \

@@ -57,6 +57,14 @@ With port change:
 
 Both of these methods create a docker container with the Minecraft module for AMP. You can login to the administrative console at port (default) 8080 with the username "admin" and password "password"; change the password when you first login. From here it is a standard AMP Minecraft module.
 
+### Run As User
+The default user properties can be overriden as environment variables:
+```
+USER=AMP 
+UID=1000 
+GID=1000
+```
+
 
 ## Options
 
